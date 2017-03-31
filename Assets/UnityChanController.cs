@@ -38,12 +38,12 @@ public class UnityChanController : MonoBehaviour {
 			myRigidbody.AddForce (turnForce, 0, 0);
 		}
 
-		if (myAnimator.GetCurrentAnimatorStateInfo (0).IsName ("Jump")) {
-			myAnimator.SetBool ("Jump", false);
+		if (this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName ("Jump")) {
+			this.myAnimator.SetBool ("Jump", false);
 		}
-		if (Input.GetKey (KeyCode.Space) && transform.position.y < 0.5f) {
-			myAnimator.SetBool ("Jump", true);
-			myRigidbody.AddForce (transform.up * upForce);
+		if (Input.GetKeyDown(KeyCode.Space) && this.transform.position.y < 0.5f) {
+			this.myAnimator.SetBool ("Jump", true);
+			this.myRigidbody.AddForce (this.transform.up * this.upForce);
 		}
 		if (this.isEnd) {
 			this.forwardForce *= this.coefficient;
