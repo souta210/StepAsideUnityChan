@@ -31,11 +31,11 @@ public class Generator2 : MonoBehaviour {
 				int offsetZ = Random.Range (-5, 6);
 				if (1 <= item && item <= 6) {
 					GameObject coin = Instantiate (coinPrefab) as GameObject;
-					coin.transform.position = new Vector3 (posRange * j, coin.transform.position.y, lastposition+50);
+					coin.transform.position = new Vector3 (posRange * j, coin.transform.position.y, lastposition+50 + offsetZ);
 					LastItem = coin.transform.position.z;
 				} else if (7 <= item && item <= 9) {
 					GameObject car = Instantiate (FreeCarpreFab) as GameObject;
-					car.transform.position = new Vector3 (posRange * j, car.transform.position.y, lastposition+50);
+					car.transform.position = new Vector3 (posRange * j, car.transform.position.y, lastposition+50 + offsetZ);
 					LastItem = car.transform.position.z;
 				}
 			}
